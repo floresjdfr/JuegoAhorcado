@@ -13,7 +13,7 @@
 #include "Menu.h"
 #include "Utiles.h"
 #include "Manejador_Archivos.h"
-#include "Arreglo_Palabra.h"
+#include "Palabras.h"
 
 using namespace std;
 
@@ -42,17 +42,17 @@ int main() {
     ifstream Diccionario;
     
     Diccionario.open("Diccionario.txt");
-    Arreglo_Palabra* palabras = new Arreglo_Palabra(Manejador_Archivos::contador_total_palabras(Diccionario));
+    Palabras palabras(Diccionario);
     Diccionario.close();
     
     Diccionario.open("Diccionario.txt");
-    Manejador_Archivos::leer_palabras(Diccionario, palabras);
+    palabras.agregar_palabra(Diccionario);
     
     
     
     Diccionario.close();
     
-   cout << palabras->to_string_arreglo_palabra();
+   cout << palabras.to_string_palabras();
     
     
     
@@ -60,7 +60,6 @@ int main() {
     
     cout << ("\n\nPresione enter para limpiar pantalla ");
     cin.get();
-    
     Utiles::limpiar_pantalla();
     return 0;
 }

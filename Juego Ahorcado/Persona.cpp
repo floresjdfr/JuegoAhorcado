@@ -51,7 +51,7 @@ string Persona::toStringPersona()const {
 
 }
 
-void Persona::jugar(string palabra, char letra){
+/*void Persona::jugar(string palabra, char letra){
     
 }
 /*int Persona::verificar_posicion(string palabra, char letra){

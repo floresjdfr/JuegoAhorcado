@@ -31,7 +31,7 @@ int Manejador_Archivos::contador_total_palabras(ifstream& diccionario){
 
 
 
-void Manejador_Archivos::leer_palabras(ifstream& diccionario, Arreglo_Palabra* palabras){
+/*void Manejador_Archivos::leer_palabras(ifstream& diccionario, Palabras* palabras){
     string palabra;
     if(!diccionario.is_open()){
         cout << "No fue posible abrir el archivo \n";
@@ -41,9 +41,9 @@ void Manejador_Archivos::leer_palabras(ifstream& diccionario, Arreglo_Palabra* p
             palabras->agregar_palabra(palabra);
         } 
     }
-}
+}*/
 
-/*void Manejador_Archivos::guarda_juego(ofstream& archivo, Juego* juego){   **Hasta que juego este hecho lo implemento
+/*Manejador_Archivos::guarda_juego(ofstream& archivo, Juego* juego){   **Hasta que juego este hecho lo implemento
     if(!archivo.is_open()){
         cout << "No fue posible abrir el archivo \n";
     }

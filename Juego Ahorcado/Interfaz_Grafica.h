@@ -9,6 +9,7 @@
 #define	INTERFAZ_GRAFICA_H
 
 #include "Jugadores.h"
+#include <windows.h>
 
 class Interfaz_Grafica {
 public:

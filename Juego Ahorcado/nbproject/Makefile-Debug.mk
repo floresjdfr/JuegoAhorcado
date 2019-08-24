@@ -35,13 +35,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Arreglo_Palabra.o \
 	${OBJECTDIR}/Interfaz_Grafica.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Jugadores.o \
 	${OBJECTDIR}/Manejador_Archivos.o \
 	${OBJECTDIR}/Menu.o \
-	${OBJECTDIR}/Palabra.o \
+	${OBJECTDIR}/Palabras.o \
 	${OBJECTDIR}/Persona.o \
 	${OBJECTDIR}/Utiles.o \
 	${OBJECTDIR}/main.o
@@ -71,11 +70,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Arreglo_Palabra.o: Arreglo_Palabra.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Arreglo_Palabra.o Arreglo_Palabra.cpp
-
 ${OBJECTDIR}/Interfaz_Grafica.o: Interfaz_Grafica.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -101,10 +95,10 @@ ${OBJECTDIR}/Menu.o: Menu.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Menu.o Menu.cpp
 
-${OBJECTDIR}/Palabra.o: Palabra.cpp 
+${OBJECTDIR}/Palabras.o: Palabras.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Palabra.o Palabra.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Palabras.o Palabras.cpp
 
 ${OBJECTDIR}/Persona.o: Persona.cpp 
 	${MKDIR} -p ${OBJECTDIR}

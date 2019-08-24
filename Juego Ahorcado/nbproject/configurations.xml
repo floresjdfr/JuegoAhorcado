@@ -4,13 +4,12 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Arreglo_Palabra.h</itemPath>
       <itemPath>Interfaz_Grafica.h</itemPath>
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
       <itemPath>Menu.h</itemPath>
-      <itemPath>Palabra.h</itemPath>
+      <itemPath>Palabras.h</itemPath>
       <itemPath>Persona.h</itemPath>
       <itemPath>Utiles.h</itemPath>
     </logicalFolder>
@@ -21,13 +20,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Arreglo_Palabra.cpp</itemPath>
       <itemPath>Interfaz_Grafica.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
       <itemPath>Menu.cpp</itemPath>
-      <itemPath>Palabra.cpp</itemPath>
+      <itemPath>Palabras.cpp</itemPath>
       <itemPath>Persona.cpp</itemPath>
       <itemPath>Utiles.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -57,10 +55,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="Arreglo_Palabra.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Arreglo_Palabra.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">
@@ -81,9 +75,9 @@
       </item>
       <item path="Menu.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Palabra.h" ex="false" tool="3" flavor2="0">
+      <item path="Palabras.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Persona.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -116,10 +110,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Arreglo_Palabra.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Arreglo_Palabra.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">
@@ -140,9 +130,9 @@
       </item>
       <item path="Menu.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Palabra.h" ex="false" tool="3" flavor2="0">
+      <item path="Palabras.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Persona.cpp" ex="false" tool="1" flavor2="0">
       </item>

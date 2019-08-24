@@ -31,8 +31,8 @@ public:
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
-    void jugar(string, char);
-    int verificar_posicion(string, char);
+    //void jugar(string, char);
+    //int verificar_posicion(string, char);
     
     
     

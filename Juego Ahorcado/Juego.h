@@ -9,7 +9,7 @@
 #define	JUEGO_H
 
 #include "Jugadores.h"
-#include "Arreglo_Palabra.h"
+#include "Palabras.h"
 #include "Manejador_Archivos.h"
 #include "Utiles.h"
 

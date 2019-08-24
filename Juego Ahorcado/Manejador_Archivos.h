@@ -15,13 +15,15 @@
 using namespace std;
 
 #include "Juego.h"
-#include "Arreglo_Palabra.h"
+//#include "Palabras.h"
+
+class Palabras;
 
 class Manejador_Archivos {
     
 public:
    
-    static void leer_palabras(ifstream&, Arreglo_Palabra*);
+    //static void leer_palabras(ifstream&, Palabras*);
     static int contador_total_palabras(ifstream&);
     
     
