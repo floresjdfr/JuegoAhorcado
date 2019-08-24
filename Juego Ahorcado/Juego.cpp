@@ -29,7 +29,7 @@ string Juego::get_palabra() const{
 }
 
 
-void Juego::jugar(int jugador){
+/*void Juego::jugar(int jugador){
     cout << jugadores->get_jugadores()[jugador - 1]->toStringPersona();
     adivina = palabra;
     string adivina_copia = palabra;
@@ -44,3 +44,5 @@ void Juego::jugar(int jugador){
     
     
 }
+ * 
+ * */ 
