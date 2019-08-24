@@ -30,7 +30,7 @@ string Juego::get_palabra() const{
 
 
 void Juego::jugar(int jugador){
-    /*cout << jugadores->get_jugadores()[jugador - 1]->toStringPersona();
+    cout << jugadores->get_jugadores()[jugador - 1]->toStringPersona();
     adivina = palabra;
     string adivina_copia = palabra;
     int tamano;
@@ -40,7 +40,7 @@ void Juego::jugar(int jugador){
         adivina_copia[i] = '*';
         tamano++;
     }
-    */
+    
     
     
 }
