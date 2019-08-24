@@ -9,8 +9,10 @@
 #define	PERSONA_H
 #include <iostream>
 #include <sstream>
-using namespace std;
 
+
+
+using namespace std;
 
 class Persona {
     
@@ -31,8 +33,8 @@ public:
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
-    //void jugar(string, char);
-    //int verificar_posicion(string, char);
+    bool verificar_palabra(string, Juego&);
+    bool jugar(char, Juego&);
     
     
     

@@ -51,12 +51,16 @@ string Persona::toStringPersona()const {
 
 }
 
-/*void Persona::jugar(string palabra, char letra){
-    
+bool Persona::verificar_palabra(string input, Juego& juego){
+    if(input == juego.get_palabra())
+        return true;
+    return false;
 }
-/*int Persona::verificar_posicion(string palabra, char letra){
-    for(int i = 0; i < strlen(palabra); i++ ){
-        if(palabra[i] == letra)
-            return i;
+
+bool Persona::jugar(char letra, Juego& juego){
+    for(int i = 0; i < juego->get_largo_palabra(); i++){
+        if(juego->get_palabra()[i] == tolower(letra[0])){
+            juego->get_adivina()[i] = tolower(letra[0]);
+        }
     }
-}*/
+}

@@ -8,10 +8,12 @@
 #ifndef JUEGO_H
 #define	JUEGO_H
 
-#include "Jugadores.h"
+
 #include "Palabras.h"
 #include "Manejador_Archivos.h"
 #include "Utiles.h"
+
+class Jugadores;
 
 class Juego {
 public:
@@ -20,11 +22,19 @@ public:
     //virtual ~Juego();
     Jugadores** get_jugadores() const;
    string get_palabra() const;
-   void jugar(int jugador);
+   string get_adivina() const;
+   strig get_adivina_copia() const;
+   //void jugar(int jugador);
+   void set_palabra(string);
+   void set_adivina(string);
+   void set_adivina_copia(string);
+   int get_largo_palabra() const;
 private:
     Jugadores** jugadores;
     string palabra;
     string adivina;
+    string adivina_copia;
+    int largo_palabra;
     
 };
 
