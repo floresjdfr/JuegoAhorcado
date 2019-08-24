@@ -5,7 +5,6 @@ Jugadores::Jugadores(int t){  //Recive como parametro el total de personas que j
     //El metodo es bastante general, si solo se quiere que hayan dos jugadores
     //Se verificara en la clase juego que el parametro sea el numero dos
     tam = t;
-    canti = 0;
     this->vec = new Persona*[tam]; //Nuevo vector dinamico de jugadores dinamicos
     
     
@@ -24,14 +23,6 @@ Jugadores::~Jugadores(){
 
 int Jugadores::getTam(){
     return tam;
-}
-void Jugadores::agregar(Persona*JU){
-    if(canti < tam){
-        vec[canti++] = JU;
-    }
-    else{
-        cout << "No se permiten mas jugadores \n";
-    }
 }
 
 string Jugadores::toString() const{

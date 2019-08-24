@@ -8,11 +8,7 @@
 #ifndef INTERFAZ_GRAFICA_H
 #define	INTERFAZ_GRAFICA_H
 
-#include "windows.h"
-#include <iostream>
-#include <sstream>
-using namespace std;
-
+#include "Jugadores.h"
 
 class Interfaz_Grafica {
 public:

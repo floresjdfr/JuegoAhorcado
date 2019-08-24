@@ -17,7 +17,6 @@ using namespace std;
 class Jugadores{
 private:
     int tam;
-    int canti;
     Persona **vec;
     
 public:
