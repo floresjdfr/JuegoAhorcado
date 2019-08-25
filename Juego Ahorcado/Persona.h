@@ -21,7 +21,7 @@ private:
     string Nombre;
     int partidas_ganadas;
     int intentos;
-    Dibujo dibujo;
+    Dibujo* dibujo;
     
 public:
     
@@ -35,7 +35,7 @@ public:
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
-    Dibujo get_dibujo() const;
+    Dibujo* get_dibujo() const;
     
     
     

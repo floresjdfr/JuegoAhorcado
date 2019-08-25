@@ -13,11 +13,8 @@ Juego::Juego() {
     palabra = "Sin palabra";
 }
 
-Juego::Juego(Jugadores* jugad) {
-    jugadores = jugad;
-    palabra = "Sin palabra";
-    adivina = "**";
-    adivina_copia = "**";
+Juego::Juego(int cant) {
+    jugadores = new Jugadores(cant);
 }
 
 //Juego::~Juego() {
@@ -31,11 +28,14 @@ string Juego::get_palabra() const{
     return palabra;
 }
 
-void Juego::set_palabra(string pal){
-    palabra = pal;
+void Juego::set_palabra(Palabras palabras){
+    
+    palabra = palabras.get_palabra(rand() % palabras.get_tamano());
+    adivina = palabra;
+    adivina_copia = palabra;
     for (int i = 0; palabra[i] != '\0' ; i++){
         adivina[i] = '*';
-        adivina_copia[i] = '*';
+        adivina_copia[i] = '*' ;
         largo_palabra++;
     }
 }
@@ -60,6 +60,7 @@ void Juego::set_adivina_copia(string ad){
     adivina = ad;
 }
 bool Juego::jugar(string input, int posicion_jugador){ 
+    adivina_copia = adivina;
     for(int i = 0; i < largo_palabra; i++){
         if(palabra[i] == tolower(input[0]))
             adivina[i] = tolower(input[0]);
@@ -74,9 +75,13 @@ bool Juego::jugar(string input, int posicion_jugador){
 }
 
 bool Juego::verifica_palabra(string input){ //Si el jugador toma la desicion de adivinar palabra completa
-    if(palabra == Utiles::to_lower(input))
-        return 1;
-    return 0;
+   
+    if(Utiles::to_lower(input) == this->get_palabra()){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 bool Juego::ya_gano(){

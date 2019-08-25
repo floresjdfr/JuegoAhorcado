@@ -13,19 +13,20 @@
 #include "Manejador_Archivos.h"
 #include "Utiles.h"
 #include <string>
+#include <stdlib.h>
 
 class Jugadores;
 
 class Juego {
 public:
     Juego();
-    Juego(Jugadores*);
+    Juego(int);
     //virtual ~Juego();
     Jugadores* get_jugadores() const;
    string get_palabra() const;
    string get_adivina() const;
    string get_adivina_copia() const;
-   void set_palabra(string);
+   void set_palabra(Palabras);
    void set_adivina(string);
    void set_adivina_copia(string);
    int get_largo_palabra() const;

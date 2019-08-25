@@ -23,6 +23,7 @@ class Utiles {
 public:
     static void limpiar_pantalla();
     static string to_lower(string);
+    static bool es_digito(string);
 };
 
 #endif

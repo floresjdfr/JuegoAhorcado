@@ -5,7 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Dibujo.h</itemPath>
-      <itemPath>Interfaz_Grafica.h</itemPath>
+      <itemPath>Interfaz.h</itemPath>
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
@@ -22,7 +22,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Dibujo.cpp</itemPath>
-      <itemPath>Interfaz_Grafica.cpp</itemPath>
+      <itemPath>Interfaz.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
@@ -61,9 +61,9 @@
       </item>
       <item path="Dibujo.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Interfaz.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">
+      <item path="Interfaz.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -120,9 +120,9 @@
       </item>
       <item path="Dibujo.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Interfaz.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">
+      <item path="Interfaz.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
       </item>

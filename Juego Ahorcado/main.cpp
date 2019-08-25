@@ -6,15 +6,8 @@
  */
 
 
-#include <Windows.h>
-#include <fstream>
-#include "Interfaz_Grafica.h"
-#include "Jugadores.h"
-#include "Menu.h"
-#include "Utiles.h"
-#include "Manejador_Archivos.h"
-#include "Palabras.h"
-
+#include "Interfaz.h"
+#include <iostream>
 using namespace std;
 
 /*
@@ -22,45 +15,10 @@ using namespace std;
  */
 int main() {
 
- 
-    Menu* menu = new Menu(5); 
-    cout << menu->mostrar_menu();
-    cout << menu->to_string();
+    Interfaz juego;
     
-    cout << "--------------------------------------------- \n \n";
+    juego.jugando();
     
-    Jugadores* jugadores = new Jugadores(2);
-    cout << jugadores->toString();
-    cout << "Ojo jugador 1: " << endl;
-    cout << jugadores->get_jugadores()[0]->get_nombre();
-
-    
-    delete menu, jugadores;
-    
-    cout << endl << "/////////////////////////////////////////////// \n \n";
-    
-    ifstream Diccionario;
-    
-    Diccionario.open("Diccionario.txt");
-    Palabras palabras(Diccionario);
-    Diccionario.close();
-    
-    Diccionario.open("Diccionario.txt");
-    palabras.agregar_palabra(Diccionario);
-    
-    
-    
-    Diccionario.close();
-    
-   cout << palabras.to_string_palabras();
-    
-    
-    
-    
-    
-    cout << ("\n\nPresione enter para limpiar pantalla ");
-    cin.get();
-    Utiles::limpiar_pantalla();
     return 0;
 }
 

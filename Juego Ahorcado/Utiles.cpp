@@ -6,6 +6,8 @@
  */
 
 #include "Utiles.h"
+#include <ctype.h>
+#include "string.h"
 
 void Utiles::limpiar_pantalla(){
 #ifdef _WIN32  
@@ -16,9 +18,31 @@ void Utiles::limpiar_pantalla(){
 }
 
 string Utiles::to_lower(string palabra){
-    string nueva_palabra;
+    
     for(int i = 0; palabra[i] != '\0'; i++){
-        nueva_palabra[i] = tolower(palabra[i]);
+        palabra[i] = tolower(palabra[i]);
     }
-    return nueva_palabra;
+    return palabra;
+}
+
+bool Utiles::es_digito(string input){
+    
+    int verificacion, total_caracteres = 0;
+    
+    for (int i = 0; input[i] != '\0'; i++){
+        total_caracteres++;
+    }
+    
+    for(int i = 0; i < total_caracteres; i++){
+        if(isdigit(input[i])){
+            verificacion++;
+        } 
+    }
+    
+    if(total_caracteres == verificacion){
+        return true;
+    }
+    else{
+        return false;
+    }
 }

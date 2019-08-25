@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Dibujo.o \
-	${OBJECTDIR}/Interfaz_Grafica.o \
+	${OBJECTDIR}/Interfaz.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Jugadores.o \
 	${OBJECTDIR}/Manejador_Archivos.o \
@@ -76,10 +76,10 @@ ${OBJECTDIR}/Dibujo.o: Dibujo.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Dibujo.o Dibujo.cpp
 
-${OBJECTDIR}/Interfaz_Grafica.o: Interfaz_Grafica.cpp 
+${OBJECTDIR}/Interfaz.o: Interfaz.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Interfaz_Grafica.o Interfaz_Grafica.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Interfaz.o Interfaz.cpp
 
 ${OBJECTDIR}/Juego.o: Juego.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -14,7 +14,6 @@
 
 using namespace std;
 
-#include "Juego.h"
 //#include "Palabras.h"
 
 class Palabras;

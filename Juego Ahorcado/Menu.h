@@ -7,7 +7,12 @@
 
 #ifndef MENU_H
 #define	MENU_H
-#include "Interfaz_Grafica.h"
+
+#include <iostream>
+#include <sstream>
+#include <windows.h>
+using namespace std;
+
 
 class Menu{
 public:

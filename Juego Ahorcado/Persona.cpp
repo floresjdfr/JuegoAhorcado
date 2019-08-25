@@ -5,12 +5,14 @@ Persona::Persona(string nom)
     Nombre = nom;
     partidas_ganadas = 0;
     intentos = 0;
+    dibujo = new Dibujo;
 }
     
 Persona::Persona(){
     Nombre = " ";
     partidas_ganadas = 0;
     intentos = 0;
+    dibujo = new Dibujo;
 }
 
 
@@ -52,6 +54,6 @@ string Persona::toStringPersona()const {
 }
 
 
-Dibujo Persona::get_dibujo() const{
+Dibujo* Persona::get_dibujo() const{
     return dibujo;
 }
