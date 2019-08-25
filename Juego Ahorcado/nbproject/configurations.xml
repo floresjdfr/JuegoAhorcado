@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Dibujo.h</itemPath>
       <itemPath>Interfaz_Grafica.h</itemPath>
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
@@ -20,6 +21,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Dibujo.cpp</itemPath>
       <itemPath>Interfaz_Grafica.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
@@ -55,6 +57,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Dibujo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Dibujo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">
@@ -110,6 +116,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Dibujo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Dibujo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Interfaz_Grafica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Interfaz_Grafica.h" ex="false" tool="3" flavor2="0">

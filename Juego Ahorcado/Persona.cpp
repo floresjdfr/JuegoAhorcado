@@ -50,3 +50,8 @@ string Persona::toStringPersona()const {
     return r.str();
 
 }
+
+
+Dibujo Persona::get_dibujo() const{
+    return dibujo;
+}

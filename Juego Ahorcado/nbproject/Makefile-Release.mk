@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Dibujo.o \
 	${OBJECTDIR}/Interfaz_Grafica.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Jugadores.o \
@@ -69,6 +70,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Dibujo.o: Dibujo.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Dibujo.o Dibujo.cpp
 
 ${OBJECTDIR}/Interfaz_Grafica.o: Interfaz_Grafica.cpp 
 	${MKDIR} -p ${OBJECTDIR}

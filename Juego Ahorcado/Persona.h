@@ -9,6 +9,7 @@
 #define	PERSONA_H
 #include <iostream>
 #include <sstream>
+#include "Dibujo.h"
 
 
 
@@ -20,6 +21,7 @@ private:
     string Nombre;
     int partidas_ganadas;
     int intentos;
+    Dibujo dibujo;
     
 public:
     
@@ -33,6 +35,7 @@ public:
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
+    Dibujo get_dibujo() const;
     
     
     
