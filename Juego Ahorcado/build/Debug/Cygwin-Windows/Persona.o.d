@@ -1,12 +1,3 @@
-build/Debug/Cygwin-Windows/Persona.o: Persona.cpp Persona.h Juego.h \
- Palabras.h Manejador_Archivos.h Utiles.h
+build/Debug/Cygwin-Windows/Persona.o: Persona.cpp Persona.h
 
 Persona.h:
-
-Juego.h:
-
-Palabras.h:
-
-Manejador_Archivos.h:
-
-Utiles.h:

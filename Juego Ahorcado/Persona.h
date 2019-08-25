@@ -33,8 +33,7 @@ public:
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
-    bool verificar_palabra(string, Juego&);
-    bool jugar(char, Juego&);
+    
     
     
     

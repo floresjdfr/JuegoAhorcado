@@ -12,25 +12,28 @@
 #include "Palabras.h"
 #include "Manejador_Archivos.h"
 #include "Utiles.h"
+#include <string>
 
 class Jugadores;
 
 class Juego {
 public:
     Juego();
-    Juego(Jugadores**);
+    Juego(Jugadores*);
     //virtual ~Juego();
-    Jugadores** get_jugadores() const;
+    Jugadores* get_jugadores() const;
    string get_palabra() const;
    string get_adivina() const;
-   strig get_adivina_copia() const;
-   //void jugar(int jugador);
+   string get_adivina_copia() const;
    void set_palabra(string);
    void set_adivina(string);
    void set_adivina_copia(string);
    int get_largo_palabra() const;
+   bool verifica_palabra(string);
+   bool ya_gano();
+   bool jugar(string, int);
 private:
-    Jugadores** jugadores;
+    Jugadores* jugadores;
     string palabra;
     string adivina;
     string adivina_copia;

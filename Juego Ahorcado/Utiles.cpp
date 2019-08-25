@@ -14,3 +14,11 @@ void Utiles::limpiar_pantalla(){
     system("clear");
 #endif
 }
+
+string Utiles::to_lower(string palabra){
+    string nueva_palabra;
+    for(int i = 0; palabra[i] != '\0'; i++){
+        nueva_palabra[i] = tolower(palabra[i]);
+    }
+    return nueva_palabra;
+}

@@ -13,10 +13,16 @@
 
 #include "windows.h"
 
+#include <iostream>
+
+using namespace std;
+
+
 
 class Utiles {
 public:
     static void limpiar_pantalla();
+    static string to_lower(string);
 };
 
 #endif

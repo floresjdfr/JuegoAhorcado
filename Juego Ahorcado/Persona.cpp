@@ -50,17 +50,3 @@ string Persona::toStringPersona()const {
     return r.str();
 
 }
-
-bool Persona::verificar_palabra(string input, Juego& juego){
-    if(input == juego.get_palabra())
-        return true;
-    return false;
-}
-
-bool Persona::jugar(char letra, Juego& juego){
-    for(int i = 0; i < juego->get_largo_palabra(); i++){
-        if(juego->get_palabra()[i] == tolower(letra[0])){
-            juego->get_adivina()[i] = tolower(letra[0]);
-        }
-    }
-}
