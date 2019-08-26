@@ -172,11 +172,26 @@ void Juego::reporte_ganador(ofstream& records, int posicion){
     if(records.is_open()){
         if(posicion == 0){
             
-            records << jugadores->get_jugadores()[posicion]->get_nombre() << delim_dato << palabra << delim_dato <<  jugadores->get_jugadores()[posicion + 1]->get_nombre() << delim_final;
+            records << this->get_ganador(posicion) << delim_dato << palabra << delim_dato <<  this->get_ganador(posicion + 1) << delim_final;
         }
         else{
-            records << jugadores->get_jugadores()[posicion]->get_nombre() << delim_dato << palabra << delim_dato <<  jugadores->get_jugadores()[posicion - 1]->get_nombre() << delim_final;
+            records << this->get_ganador(posicion) << delim_dato << palabra << delim_dato <<  this->get_ganador(posicion - 1) << delim_final;
         }
+    }
+    else{
+        cout << "Error abriendo archivo rerpotes " << endl;
+    }
+    
+    //records.close();
+}
+
+void Juego::reporte_solo(ofstream& records){
+    //records.open("Records.txt");
+    char delim_dato = '\t';
+    char delim_final = '\n';
+    if(records.is_open()){
+        
+        records << this->get_ganador(0) << delim_dato << palabra << delim_final; 
     }
     else{
         cout << "Error abriendo archivo rerpotes " << endl;
@@ -189,9 +204,20 @@ void Juego::reporte_no_gane(ofstream& records){
     char delim_dato = '\t';
     char delim_final = '\n';
     if(records.is_open()){
-        records <<  jugadores->get_jugadores()[0]->get_nombre() << delim_dato << palabra << delim_dato <<  jugadores->get_jugadores()[1]->get_nombre() << delim_final;
+        records <<  jugadores->get_jugadores()[0]->get_nombre() << delim_dato << jugadores->get_jugadores()[1]->get_nombre()<< delim_dato <<  palabra << delim_final;
     }
     else{
         cout << "Error abriendo archivo reportes" << endl;
+    }
+}
+
+void Juego::reporte_no_gane_solo(ofstream& records){
+    char delim_dato = '\t';
+    char delim_final = '\n';
+    if(records.is_open()){
+        records << this->get_ganador(0) << delim_dato << palabra << delim_final;
+    }
+    else{
+        cout << "No se pudo abrir archivo de reportes" << endl;
     }
 }

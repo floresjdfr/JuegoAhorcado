@@ -42,9 +42,10 @@ public:
    string mostrar_dibujo(int); //Recibe como parametro la posicion del jugador en el arreglo
    string get_ganador(int); //Recibe posicion jugador en vector
    bool salir();
-   void reporte_ganador(ofstream&, int);
-   //void reporte_empate(ofstream&);
-   void reporte_no_gane(ofstream&);
+   void reporte_ganador(ofstream&, int); //GENERA UN REPORTE DEL GANANOR
+   void reporte_solo(ofstream&); //CUANDO SE JUEGA SOLO Y GANA, SE GENERA UN REPORTE
+   void reporte_no_gane(ofstream&); // CUANDO SON DOS JUGADORES Y NINGUNO GANA
+   void reporte_no_gane_solo(ofstream&); // CUANDO SE JUEGA SOLO NO SE GANA
 private:
     Jugadores* jugadores;
     Palabras* vector_palabras;

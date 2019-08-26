@@ -24,6 +24,9 @@ bool salir = false;
         int intMenu;/*     ***MENU DE INICIO****/
         while(true){
              
+            Menu: //ESTA OPCION NOS AYUDA A SALIR DE LOS SWITCHES
+            
+            
             
             Utiles::limpiar_pantalla(); 
             cout << "Bienvenido \n \n";
@@ -56,7 +59,7 @@ bool salir = false;
         switch(intMenu){
             case 1:{
                 int cantidad_jug;
-                while(1){ //ciclo para verificar que solo se introducen de 1 a dos jugadores
+                while(1){ //ciclo para verificar que solo se introducen de uno a dos jugadores
                     string cant_jugadores;
                     Utiles::limpiar_pantalla();
                     cout << "Cuantos jugadores: ";
@@ -124,7 +127,15 @@ bool salir = false;
                                 Utiles::limpiar_pantalla();
                                 cout << juego->get_jugadores()->get_jugadores()[0]->get_dibujo()->to_string_dibujo() << endl;
                                 if(juego->salir()){ //****Si elige salir y no continuar
-                                    cout << "Usted no gano" << endl;
+                                    
+                                    
+                                    // CREO UN OBJETO OFSTREAM PARA CREAR EL REPORTE                       **Nota: por alguna razon ios::app no sirve
+                                    ofstream reporte_solo("Perdidas_un_jugador.txt"/*,ios::app*/);
+                                    juego->reporte_no_gane_solo(reporte_solo);
+                                    reporte_solo.close();
+                                    
+                                    
+                                    cout << "Usted no gano porque se rindio" << endl;
                                     cout << "Presione enter ";
                                     cin.get();
                                     break;
@@ -134,7 +145,12 @@ bool salir = false;
                                 Utiles::limpiar_pantalla();
                             }
                             else{ //Si gano se ejecuta este codigo
-                                //juego->get_jugadores()->get_jugadores()[0]->set_gane();
+                                
+                                //CREO UN OBJETO OFSTREAM PARA REPORTAR GANE
+                                ofstream gane_solo("Reporte_ganadas_solo.txt");
+                                juego->reporte_solo(gane_solo);
+                                gane_solo.close();
+                                
                                 cout << "Jugador ganador: " << juego->get_ganador(0) << endl;
                                 cout << "Adivino: " << juego->get_palabra() << endl;
                                 cout << "Digite enter para continuar \n";
@@ -143,6 +159,19 @@ bool salir = false;
                             }
                             
                         }
+                        
+                        if(juego->ya_perdio(0)){
+                            ofstream reporte_solo("Perdidas_un_jugador.txt"/*,ios::app*/);
+                            juego->reporte_no_gane_solo(reporte_solo);
+                            reporte_solo.close(); 
+                            
+                            cout << "Usted perdio, no puedo adivinar la palabra " << juego->get_palabra() << endl;
+                            cout << "Presione enter para salir ";
+                            cin.get();
+                        }
+                        
+                        
+                        
                         delete juego; // Se borra el objeto de juego
                         cin.clear();
                         break; //Final un jugador
@@ -200,6 +229,15 @@ bool salir = false;
                                     
                                     if(juego->ya_gano()){
                                         cout << "El ganador es: " << juego->get_ganador(0) << endl;
+                                        cout << "Adivino la palabra: " << juego->get_palabra() << endl;
+                                        
+                                        //GENERANDO REPORTE DEL GANE
+                                           
+                                        ofstream reporte_ganador("Ganadas_dos_jugadores.txt"/*, ios::app*/);
+                                        juego->reporte_ganador(reporte_ganador, 0);
+                                        reporte_ganador.close();
+                                        
+                                        
                                         cout << "Digite enter para salir ";
                                         cin.get();
                                         break;
@@ -208,23 +246,30 @@ bool salir = false;
                                         if (juego->salir()){
                                             cout <<"El ganador sera su oponente, ya que usted se rindio" << endl;
                                             cout << "Ganador --> " << juego->get_ganador(1) << endl;
+                                            
+                                            //GENERANDO REPORTE DE GANADOR
+                                            ofstream reporte_ganador("Ganadas_dos_jugadores.txt"/*, ios::app*/);
+                                            juego->reporte_ganador(reporte_ganador, 1);
+                                            reporte_ganador.close();
+                                            
                                             cout << "Digite enter para salir ";
                                             cin.get();
                                             break;
                                         }
                                     }
+                                    
     
                                     Utiles::limpiar_pantalla();
                                 
                             }
 
                             
+                           
                             
                             
+                             //SI JUGADOR 2 NO HA PERDIDO ENTRA EN EL CODIGO
                             
-                            
-                            
-                            if(!juego->ya_perdio(1)){ //SI JUGADOR DOS NO HA PERDIDO ENTRA EN EL CODIGO
+                            if(!juego->ya_perdio(1)){ 
                                 
                                     cout << juego->mostrar_dibujo(1) << endl;
                                     cout << endl << juego->get_adivina() << endl;
@@ -241,14 +286,34 @@ bool salir = false;
                                     
                                     if(juego->ya_gano()){
                                         cout << "El ganador es: " << juego->get_ganador(1) << endl;
+                                        cout << "Palabra adivinada: " << juego->get_palabra() << endl;
                                         cout << "Digite enter para salir ";
+                                        
+                                        
+                                        //GENERANDO REPORTE DEL GANE
+                                           
+                                        ofstream reporte_ganador("Ganadas_dos_jugadores.txt"/*, ios::app*/);
+                                        juego->reporte_ganador(reporte_ganador, 1);
+                                        reporte_ganador.close();
+                                        
+                                        
                                         cin.get();
                                         break;
                                     }
                                     else {
                                         if (juego->salir()){
                                             cout <<"El ganador sera su oponente, ya que usted se rindio" << endl;
-                                            cout << "Ganador --> " << juego->get_ganador(1) << endl;
+                                            cout << "Ganador --> " << juego->get_ganador(0) << endl;
+                                            
+                                            
+                                             //GENERANDO REPORTE DEL GANE
+                                           
+                                            ofstream reporte_ganador("Ganadas_dos_jugadores.txt"/*, ios::app*/);
+                                            juego->reporte_ganador(reporte_ganador, 0);
+                                            reporte_ganador.close();
+                                            
+                                            
+                                            
                                             cout << "Digite enter para salir ";
                                             cin.get();
                                             break;
@@ -256,15 +321,29 @@ bool salir = false;
                                     }
                                     Utiles::limpiar_pantalla();
                                 }   
-                        } //SALE DEL WHILE SI AMBOS PERDIENDON O SI ALGUNO GANO
+                        } 
+                        
+                        
+                        
+                        
                         //SI AMBOS PERDIERON ENTRA EN EL IF DE ABAJO
                         
                         if(juego->ya_perdio(0) && juego->ya_perdio(1)){
                             cout << "Ninguno de los jugadores ganaron" << endl;
                             cout << "La palabra era: " << juego->get_palabra() << endl;
+                            
+                            
+                            //GENERANDO REPORTE DE PARTIDA
+                            
+                            ofstream reporte("Ningun_gane.txt"/*, ios::spp*/);
+                            juego->reporte_no_gane(reporte);
+                            reporte.close();
+                            
+                            
                             cout << "Presione enter para salir ";
                             cin.get();
                         }
+                        
                         
                         
                         
@@ -284,9 +363,14 @@ bool salir = false;
             
     
             
-            case 2:{ //OPCION DOS DEL MENU PRINCIPAL
+            //****************************************************OPCION DOS DEL MENU PRINCIPAL AGREGAR PALABRA AL DICCIONARIO**************************************************
+
+            case 2:{ 
                 
-                cout << "No disponible de momento \n";
+                ofstream diccionario("Diccionario.txt"/*, ios::app*/);
+                this->agregar_palabras(diccionario);
+                diccionario.close();
+                cout << "Palabra agregada" << endl;
                 cout << "Presione enter \n";
                 cin.get();
                 break;
@@ -296,23 +380,98 @@ bool salir = false;
             
             
             
-            
-            
-            
-            
-            case 3:{ //OPCION TRES DEL MENU PRINCIPAL
+            //******************************** OPCION TRES DEL MENU PRINCIPAL, HACER TRAMPA Y VER LAS PALABRAS DEL DICCIONARIO
+        
+            case 3:{ 
                 
-                cout << "No disponible de momento \n";
+                ifstream diccionario("Diccionario.txt");
+                this->leer_palabras_diccionario(diccionario);
+                diccionario.close();
                 cout << "Presione enter \n";
                 cin.get();
                 break;
             }
             
             
-            
-            case 4: { //OPCION CUATRO DEL MENU PRINCIPAL
-                cout << "No disponible de momento \n";
-                cout << "Presione enter \n";
+            //***************************** LA OPCION CUATRO MUESTRA LOS RECORDS DE LAS PARTIDAS*******************************
+            case 4: { 
+                
+                while(1){
+                    Utiles::limpiar_pantalla();
+                    cout << "1. Reporte de partidas ganadas de un jugador" << endl;
+                    cout << "2. Reporte de partidas perdidas de un jugador" << endl;
+                    cout << "3. Reporte de partidas ganadas de dos jugadores" << endl;
+                    cout << "4. Reporte de partidas perdidas de dos jugadores" << endl;
+                    cout << "5. Salir" << endl;
+                    cout << "Que desea hacer: ";
+                    string opcion;
+                    int int_opcion;
+                    getline(cin, opcion);
+                    if(Utiles::es_digito(opcion)){
+                        stringstream s;
+                        s.str(opcion);
+                        s >> int_opcion;
+                        
+                    }
+                    else{
+                        continue;
+                    }
+                    
+                    switch(int_opcion){
+                        case 1:{
+                            
+                            ifstream reporte("Reporte_ganadas_solo.txt");
+                            cout << this->reporte_ganadas_solo(reporte);
+                            reporte.close();
+                            
+                            cout << "Presione enter " ;
+                            cin.get();
+                            break;
+                        }
+                        case 2:{
+                            ifstream reporte("Perdidas_un_jugador.txt");
+                            cout << this->reporte_perdidas_solo(reporte);
+                            reporte.close();
+                            
+                            cout << "Presione enter " ;
+                            cin.get();
+                            break;
+                        }
+                        
+                        case 3:{
+                            
+                            ifstream reporte("Ganadas_dos_jugadores.txt");
+                            cout << this->reporte_ganadas(reporte);
+                            reporte.close();
+                            
+                            
+                            cout << "Presione enter " ;
+                            cin.get();
+                            break; 
+                        }
+                        
+                        case 4: {
+                            ifstream reporte("Ningun_gane.txt");
+                            cout << this->reporte_perdidas(reporte);
+                            reporte.close();
+                            
+                            
+                            cout << "Presione enter " ;
+                            cin.get();
+                            break; 
+                        }
+                        case 5:{
+                            goto Menu;
+                        }
+                        break;
+                        
+                        default:{
+                            cout << "Opcion invalida" << endl;
+                            break;
+                        }
+                            
+                    }
+                }
                 cin.get();
                 break;
             }
@@ -320,7 +479,7 @@ bool salir = false;
             
             
             
-            case 5:{ //OPCION CINCO DEL MENU PRINCIPAL
+            case 5:{ //OPCION CINCO DEL MENU PRINCIPAL ---> SALIR
                 return 1; 
                 break;
             }
@@ -334,4 +493,111 @@ bool salir = false;
 
     }
 
+}
+
+
+
+void Interfaz::agregar_palabras(ofstream& diccionario){
+    if(diccionario.is_open()){
+        string palabra;
+        cout << "Que palabra desea agregar: ";
+        getline(cin, palabra);
+        diccionario << palabra << ',';
+    }
+    else{
+        cout << "No se pudo abrir el diccionario" << endl;
+    }
+}
+
+
+string Interfaz::leer_palabras_diccionario(ifstream& diccionario){
+    if(diccionario.is_open()){
+        string palabra;
+        stringstream s;
+        s << "**Palabras**" << endl;
+        while(getline(diccionario, palabra, ',')){
+            s << palabra << endl;
+        }
+        return s.str();
+    }
+    else{
+        cout << "Error abriendo el diccionario" << endl;
+    }
+}
+
+
+string Interfaz::reporte_ganadas_solo(ifstream& reporte){
+    stringstream s;
+    if(reporte.is_open()){
+        string nombre;
+        string palabra;
+        
+        while(!reporte.eof()){
+            getline(reporte, nombre, '\t');
+            getline(reporte, palabra, '\n');
+            s << "Ganador: " << nombre << "     ---> adivino: " << palabra << endl;
+        }
+    }
+    else{
+        s << "No se pudo abrir el reporte" << endl;
+    }
+    return s.str();
+}
+
+string Interfaz::reporte_perdidas_solo(ifstream& reporte){
+    stringstream s;
+    if(reporte.is_open()){
+        string nombre;
+        string palabra;
+        
+        while(!reporte.eof()){
+            getline(reporte, nombre, '\t');
+            getline(reporte, palabra, '\n');
+            s << "Perdedor: " << nombre << "     ---> no adivino: " << palabra << endl;
+        }
+    }
+    else{
+        s << "No se pudo abrir el reporte" << endl;
+    }
+    return s.str();
+}
+
+string Interfaz::reporte_ganadas(ifstream& reporte){
+    stringstream s;
+    if(reporte.is_open()){
+        string nombre;
+        string nombre2;
+        string palabra;
+        
+        while(!reporte.eof()){
+            getline(reporte, nombre, '\t');
+            getline(reporte, palabra, '\t');
+            getline(reporte, nombre2, '\n');
+            s << "Ganador: " << nombre << "     ---> adivino: " << palabra << "      ---> Perdedor: " << nombre2 << endl;
+        }
+    }
+    else{
+        s << "No se pudo abrir el reporte" << endl;
+    }
+    return s.str();
+}
+
+string Interfaz::reporte_perdidas(ifstream& reporte){
+    stringstream s;
+    if(reporte.is_open()){
+        string nombre;
+        string nombre2;
+        string palabra;
+        
+        while(!reporte.eof()){
+            getline(reporte, nombre, '\t');
+            getline(reporte, nombre2, '\t');
+            getline(reporte, palabra, '\n');
+            s << nombre << "  y  " << nombre2 << "  --->  empataron, y no puedieron adivinar la palabra: " << palabra << endl;
+        }
+    }
+    else{
+        s << "No se pudo abrir el reporte" << endl;
+    }
+    return s.str();
 }
