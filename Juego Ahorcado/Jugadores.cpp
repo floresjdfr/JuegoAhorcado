@@ -15,7 +15,9 @@ Jugadores::Jugadores(int t){  //Recive como parametro el total de personas que j
 }
 
 Jugadores::~Jugadores(){
-
+    for(int i = 0; i < tam; i++){
+        delete vec[i];
+    }
     delete[] vec; //Borra vector dinamico
     vec = NULL; //Asegurandonos que memoria no esta en uso
 }

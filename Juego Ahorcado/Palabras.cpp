@@ -14,11 +14,21 @@ Palabras::Palabras(ifstream& diccionario) {
     palabras = new string[tamano];
     for(int i = 0; i < tamano; i++){
         palabras[i] = "Nada";
+    } 
+}
+
+void Palabras::agregar_palabras(string palabra){
+    if(cantidad < tamano){
+        
+        palabras[cantidad++] = palabra;
     }
 }
 
 
 Palabras::~Palabras() {
+    delete[] palabras;
+   palabras = NULL; 
+
 }
 
 
@@ -48,7 +58,7 @@ int Palabras::get_tamano() const{
     return tamano;
 }
 
-void Palabras::agregar_palabra(ifstream& diccionario){
+/*void Palabras::agregar_palabra(ifstream& diccionario){
     string palabra;
     if(!diccionario.is_open()){
         cout << "No fue posible abrir el archivo \n";
@@ -59,4 +69,4 @@ void Palabras::agregar_palabra(ifstream& diccionario){
             palabras[cantidad++] = palabra;
         } 
     }
-}
+}*/

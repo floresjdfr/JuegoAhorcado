@@ -11,18 +11,19 @@
 #include <sstream>
 #include "Manejador_Archivos.h"
 
-class Manejador_Archivos;
+
 
 class Palabras {
 public:
     Palabras(ifstream&);
     ~Palabras();
-    void agregar_palabra(ifstream&);
+    //void agregar_palabra(ifstream&);
     string to_string_palabras() const;
     int get_cantidad() const;
     int get_tamano() const;
     string get_palabra(int) const;
     string* get_vector_palabras() const;
+    void agregar_palabras(string);
 private:
     string *palabras;
     int cantidad;

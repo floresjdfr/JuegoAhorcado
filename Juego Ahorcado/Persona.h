@@ -19,8 +19,9 @@ class Persona {
     
 private:
     string Nombre;
-    int partidas_ganadas;
+    //int partidas_ganadas;
     int intentos;
+    //int jugadas;
     Dibujo* dibujo;
     
 public:
@@ -30,12 +31,14 @@ public:
     virtual ~Persona();
     void set_nombre(string);
     string get_nombre() const;
-    int get_partidas_ganadas() const;
-    void set_gane();
+    //int get_partidas_ganadas() const;
+    //void set_gane();
     int get_intentos() const;
     void set_nuevo_intento();
     string toStringPersona() const;
     Dibujo* get_dibujo() const;
+    //int get_jugadas() const;
+    //void aumentar_jugadas();
     
     
     

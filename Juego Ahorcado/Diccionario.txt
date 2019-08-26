@@ -1,1 +1,1 @@
-hola,casa,cancion,terminal,perro,teclado
+hola,casa,cancion,terminal,perro,teclado,botella,humano,persona,gente,hombre,padre,sobrino,criatura,océano,oveja,perro,gato,vaca,cerdo,caballo,yegua,oveja,mono,ratón,rata,tigre,conejo,dragon,ciervo

@@ -27,7 +27,8 @@ string Utiles::to_lower(string palabra){
 
 bool Utiles::es_digito(string input){
     
-    int verificacion, total_caracteres = 0;
+    int verificacion = 0;
+    int total_caracteres = 0;
     
     for (int i = 0; input[i] != '\0'; i++){
         total_caracteres++;

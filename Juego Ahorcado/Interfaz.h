@@ -13,7 +13,7 @@
 
 class Interfaz {
 public:
-    bool jugando();
+    int jugando();
     
 };
 
