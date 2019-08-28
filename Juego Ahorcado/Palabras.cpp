@@ -57,16 +57,3 @@ int Palabras::get_cantidad() const{
 int Palabras::get_tamano() const{
     return tamano;
 }
-
-/*void Palabras::agregar_palabra(ifstream& diccionario){
-    string palabra;
-    if(!diccionario.is_open()){
-        cout << "No fue posible abrir el archivo \n";
-    }
-    else{
-        while(getline(diccionario, palabra, ',')){
-            
-            palabras[cantidad++] = palabra;
-        } 
-    }
-}*/

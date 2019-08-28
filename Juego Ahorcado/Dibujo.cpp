@@ -22,11 +22,11 @@ Dibujo::Dibujo() {
 
 
 
-string Dibujo::get_vector_dibujo() const{
+string Dibujo::get_vector_dibujo() const{ //RETORNA EL VECTOR
     return vector[6];
 }
 
-string Dibujo::to_string_dibujo() const{
+string Dibujo::to_string_dibujo() const{ //MUESTRA EL VECTOR DE DIBUJO
     stringstream s;
         for (int i = 0; i < 6; i++){
             s << vector[i] << endl;
@@ -34,7 +34,7 @@ string Dibujo::to_string_dibujo() const{
         return s.str();
 }
 
-void Dibujo::set_vector(int intento){
+void Dibujo::set_vector(int intento){ //EL PARAMETRO ES UN INTENTO PERDIDO MAS DEL JUGADOR
     if(intento == 1){
             vector[2] = vector[2] + cabeza;
         }

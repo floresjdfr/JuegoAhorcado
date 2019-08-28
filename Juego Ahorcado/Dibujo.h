@@ -17,7 +17,7 @@ public:
     Dibujo();
     string get_vector_dibujo() const; //RETORNA EL VECTOR QUE ES EL DIBUJO DEL AHORCADO
     string to_string_dibujo() const; //MUESTRA EL DIBUJO
-    void set_vector(int); //el parametro es la cantidad de intentos restantes del jugador
+    void set_vector(int); //EL PARAMETRO EL UN INTENTO PERDIDO MAS DEL JUGADOR
 private:
     string vector[6];
     string cabeza;

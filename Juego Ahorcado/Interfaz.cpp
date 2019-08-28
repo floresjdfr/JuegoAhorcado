@@ -10,7 +10,7 @@
 
 
 
-int Interfaz::jugando(){
+void Interfaz::jugando(){
     
 bool salir = false;
 
@@ -26,10 +26,7 @@ bool salir = false;
              
             Menu: //ESTA OPCION NOS AYUDA A SALIR DE LOS SWITCHES
             
-            
-            
-            Utiles::limpiar_pantalla(); 
-            cout << "Bienvenido \n \n";
+            cout <<this->mostrar_bienvenido();
             cout << "Que desea hacer: \n";
             cout << "1. Jugar \n";
             cout << "2. Agregar palabras al diccionario \n";
@@ -88,15 +85,14 @@ bool salir = false;
                     
                     
                     case 1:{ //Un jugador inicio
-                        //srand (time(NULL));//Se inicializa el random para que las palabras escogidas sean al azar
+                       
                         ifstream diccionario("Diccionario.txt");
                         Juego* juego = new Juego(cantidad_jug, diccionario); //Se crea juego
                         diccionario.close();
-                        //diccionario.close();
-                        diccionario.open("Diccionario.txt");
-                        juego->iniciar_palabras(diccionario);
-                        diccionario.close();
                         
+                        diccionario.open("Diccionario.txt");
+                        juego->iniciar_palabras(diccionario); //METODO PARA INDRODUCIR LAS PALABRAS DEL ARCHIVO AL VECTOR DE PALABRAS
+                        diccionario.close();
                         
                         
                         Utiles::limpiar_pantalla();
@@ -104,11 +100,9 @@ bool salir = false;
                         juego->preguntar_nombre(1); // Metodo para ingresar el nombre de los jugadores, recibe cantidad jugadores como parametro
                         cout << "Empezando..." << endl;
                         Sleep(2000);
-                        juego->set_palabra(); //Se escoge una palabra al azar
+                        juego->set_palabra(); //METODO PARA ESCOGER UNA PALABRA AL AZAR
                         
-                        diccionario.open("Diccionario.txt");
-                        juego->iniciar_palabras(diccionario);
-                        diccionario.close();
+                        
                         Utiles::limpiar_pantalla();
 
                         while(!juego->ya_perdio(0)){ //Se verifica que jugador no haya perdido
@@ -121,23 +115,32 @@ bool salir = false;
                                 cout << "Digite letra " << juego->get_nombre_jugador(0) << " ";
                                 string car;
                                 getline(cin, car);
+                                
+                                Utiles::limpiar_pantalla();
+                                
+                                
                                 if(!juego->jugar(car,0)){
                                     juego->get_jugadores()->get_jugadores()[0]->get_dibujo()->set_vector(juego->get_jugadores()->get_jugadores()[0]->get_intentos());
                                 }
-                                Utiles::limpiar_pantalla();
-                                cout << juego->get_jugadores()->get_jugadores()[0]->get_dibujo()->to_string_dibujo() << endl;
+                                
+                                
+                                cout << juego->get_jugadores()->get_jugadores()[0]->get_dibujo()->to_string_dibujo() << endl;  //MUESTRA DIBUJO
+                                
                                 if(juego->salir()){ //****Si elige salir y no continuar
                                     
                                     
-                                    // CREO UN OBJETO OFSTREAM PARA CREAR EL REPORTE                       **Nota: por alguna razon ios::app no sirve
+                                    //OBJETO OFSTREAM PARA CREAR EL REPORTE                       **Nota: por alguna razon ios::app no sirve
                                     ofstream reporte_solo("Perdidas_un_jugador.txt"/*,ios::app*/);
                                     juego->reporte_no_gane_solo(reporte_solo);
                                     reporte_solo.close();
                                     
                                     
                                     cout << "Usted no gano porque se rindio" << endl;
+                                    cout << "La palabra oculta era: " << juego->get_palabra() << endl;
+                                    cout << "Intentos fallidos: " << juego->get_jugadores()->get_jugadores()[0]->get_intentos() << endl;
                                     cout << "Presione enter ";
                                     cin.get();
+                                    Utiles::limpiar_pantalla();
                                     break;
                                     
                                 }
@@ -153,8 +156,10 @@ bool salir = false;
                                 
                                 cout << "Jugador ganador: " << juego->get_ganador(0) << endl;
                                 cout << "Adivino: " << juego->get_palabra() << endl;
-                                cout << "Digite enter para continuar \n";
+                                cout << "Intentos fallidos: " << juego->get_jugadores()->get_jugadores()[0]->get_intentos() << endl;
+                                cout << "Presione enter para salir ";
                                 cin.get();
+                                Utiles::limpiar_pantalla();
                                 break;
                             }
                             
@@ -165,9 +170,11 @@ bool salir = false;
                             juego->reporte_no_gane_solo(reporte_solo);
                             reporte_solo.close(); 
                             
-                            cout << "Usted perdio, no puedo adivinar la palabra " << juego->get_palabra() << endl;
+                            cout << "Usted perdio, no pudo adivinar la palabra oculta" << juego->get_palabra() << endl;
+                            cout << "Intentos fallidos: " << juego->get_jugadores()->get_jugadores()[0]->get_intentos() << endl;
                             cout << "Presione enter para salir ";
                             cin.get();
+                            Utiles::limpiar_pantalla();
                         }
                         
                         
@@ -189,8 +196,9 @@ bool salir = false;
                         ifstream diccionario("Diccionario.txt");
                         Juego* juego = new Juego(cantidad_jug, diccionario); //Se crea juego
                         diccionario.close();
+                        
                         diccionario.open("Diccionario.txt");
-                        juego->iniciar_palabras(diccionario);
+                        juego->iniciar_palabras(diccionario); //SE INICIALIZAN LAS PALABRAS
                         diccionario.close();
                         
                         Utiles::limpiar_pantalla();
@@ -212,24 +220,29 @@ bool salir = false;
                             
                             if(!juego->ya_perdio(0)){ //SI JUGADOR 1 NO HA PERDIDO ENTRA EN EL CODIGO
                                 
-                                    
-                                    cout << juego->mostrar_dibujo(0) << endl; //Muestra dibujo
+                                
+                                     
+                                    cout << juego->mostrar_dos_dibujos(); //Muestra dibujo
                                     cout << endl <<juego->get_adivina() << endl; // Se muestra la palabra que se tiene que adivinar
                                     cin.clear();
                                     cout << "Digite letra " << juego->get_nombre_jugador(0) << " ";
                                     string car;
                                     getline(cin, car);
+                                    Utiles::limpiar_pantalla();
                                     if(!juego->jugar(car,0)){
                                         juego->get_jugadores()->get_jugadores()[0]->get_dibujo()->set_vector(juego->get_jugadores()->get_jugadores()[0]->get_intentos());
                                     }
-
                                     
-                                    Utiles::limpiar_pantalla();
-                                    cout << juego->mostrar_dibujo(0) << endl;
+                                    cout << juego->mostrar_dos_dibujos(); //Muestra dibujo
+                                    
+                                    
+                                    
                                     
                                     if(juego->ya_gano()){
+                                        Utiles::limpiar_pantalla();
                                         cout << "El ganador es: " << juego->get_ganador(0) << endl;
                                         cout << "Adivino la palabra: " << juego->get_palabra() << endl;
+                                        cout << "Intentos fallidos: " << juego->get_jugadores()->get_jugadores()[0]->get_intentos() << endl;
                                         
                                         //GENERANDO REPORTE DEL GANE
                                            
@@ -244,6 +257,7 @@ bool salir = false;
                                     }
                                     else {
                                         if (juego->salir()){
+                                            Utiles::limpiar_pantalla();
                                             cout <<"El ganador sera su oponente, ya que usted se rindio" << endl;
                                             cout << "Ganador --> " << juego->get_ganador(1) << endl;
                                             
@@ -271,20 +285,22 @@ bool salir = false;
                             
                             if(!juego->ya_perdio(1)){ 
                                 
-                                    cout << juego->mostrar_dibujo(1) << endl;
+                                    cout << juego->mostrar_dos_dibujos();
                                     cout << endl << juego->get_adivina() << endl;
                                     cout << "Digite letra " << juego->get_nombre_jugador(1) << " ";
                                     string car;
                                     getline(cin, car);
+                                    Utiles::limpiar_pantalla();
                                     if(!juego->jugar(car,1)){
                                         juego->get_jugadores()->get_jugadores()[1]->get_dibujo()->set_vector(juego->get_jugadores()->get_jugadores()[1]->get_intentos());
                                     }
 
                                     
-                                    Utiles::limpiar_pantalla();
-                                    cout << juego->mostrar_dibujo(1) << endl;
+                                    
+                                    cout << juego->mostrar_dos_dibujos();
                                     
                                     if(juego->ya_gano()){
+                                        Utiles::limpiar_pantalla();
                                         cout << "El ganador es: " << juego->get_ganador(1) << endl;
                                         cout << "Palabra adivinada: " << juego->get_palabra() << endl;
                                         cout << "Digite enter para salir ";
@@ -302,6 +318,7 @@ bool salir = false;
                                     }
                                     else {
                                         if (juego->salir()){
+                                            Utiles::limpiar_pantalla();
                                             cout <<"El ganador sera su oponente, ya que usted se rindio" << endl;
                                             cout << "Ganador --> " << juego->get_ganador(0) << endl;
                                             
@@ -329,6 +346,8 @@ bool salir = false;
                         //SI AMBOS PERDIERON ENTRA EN EL IF DE ABAJO
                         
                         if(juego->ya_perdio(0) && juego->ya_perdio(1)){
+                            
+                            Utiles::limpiar_pantalla();
                             cout << "Ninguno de los jugadores ganaron" << endl;
                             cout << "La palabra era: " << juego->get_palabra() << endl;
                             
@@ -342,6 +361,7 @@ bool salir = false;
                             
                             cout << "Presione enter para salir ";
                             cin.get();
+                            Utiles::limpiar_pantalla();
                         }
                         
                         
@@ -383,12 +403,13 @@ bool salir = false;
             //******************************** OPCION TRES DEL MENU PRINCIPAL, HACER TRAMPA Y VER LAS PALABRAS DEL DICCIONARIO
         
             case 3:{ 
-                
+                Utiles::limpiar_pantalla();
                 ifstream diccionario("Diccionario.txt");
-                this->leer_palabras_diccionario(diccionario);
+                cout << this->leer_palabras_diccionario(diccionario);
                 diccionario.close();
                 cout << "Presione enter \n";
                 cin.get();
+                Utiles::limpiar_pantalla();
                 break;
             }
             
@@ -461,6 +482,7 @@ bool salir = false;
                             break; 
                         }
                         case 5:{
+                            Utiles::limpiar_pantalla();
                             goto Menu;
                         }
                         break;
@@ -480,7 +502,7 @@ bool salir = false;
             
             
             case 5:{ //OPCION CINCO DEL MENU PRINCIPAL ---> SALIR
-                return 1; 
+                exit (EXIT_SUCCESS);
                 break;
             }
         }
@@ -532,9 +554,9 @@ string Interfaz::reporte_ganadas_solo(ifstream& reporte){
         string nombre;
         string palabra;
         
-        while(!reporte.eof()){
+        while(!reporte.fail()&&!reporte.eof()){
             getline(reporte, nombre, '\t');
-            getline(reporte, palabra, '\n');
+            getline(reporte, palabra, ',');
             s << "Ganador: " << nombre << "     ---> adivino: " << palabra << endl;
         }
     }
@@ -550,9 +572,9 @@ string Interfaz::reporte_perdidas_solo(ifstream& reporte){
         string nombre;
         string palabra;
         
-        while(!reporte.eof()){
+        while(!reporte.fail()&&!reporte.eof()){
             getline(reporte, nombre, '\t');
-            getline(reporte, palabra, '\n');
+            getline(reporte, palabra, ',');
             s << "Perdedor: " << nombre << "     ---> no adivino: " << palabra << endl;
         }
     }
@@ -569,10 +591,10 @@ string Interfaz::reporte_ganadas(ifstream& reporte){
         string nombre2;
         string palabra;
         
-        while(!reporte.eof()){
+        while(!reporte.fail()&&!reporte.eof()){
             getline(reporte, nombre, '\t');
             getline(reporte, palabra, '\t');
-            getline(reporte, nombre2, '\n');
+            getline(reporte, nombre2, ',');
             s << "Ganador: " << nombre << "     ---> adivino: " << palabra << "      ---> Perdedor: " << nombre2 << endl;
         }
     }
@@ -584,20 +606,35 @@ string Interfaz::reporte_ganadas(ifstream& reporte){
 
 string Interfaz::reporte_perdidas(ifstream& reporte){
     stringstream s;
-    if(reporte.is_open()){
+    if(reporte.is_open()){//so el reporte esta abierto es porque el archivo sirve, por lo tanto no lo ocupa verificar en el while
+      //recuerde siempre cerrar el archivo fisico
+      
         string nombre;
         string nombre2;
         string palabra;
         
-        while(!reporte.eof()){
-            getline(reporte, nombre, '\t');
-            getline(reporte, nombre2, '\t');
-            getline(reporte, palabra, '\n');
-            s << nombre << "  y  " << nombre2 << "  --->  empataron, y no puedieron adivinar la palabra: " << palabra << endl;
+        
+        while(!reporte.fail()&&!reporte.eof()){
+        getline(reporte, nombre, '\t');
+        getline(reporte, nombre2, '\t');
+        getline(reporte, palabra, ',');
+            
+        s << nombre << "  y  " << nombre2 << "  --->  empataron, y no puedieron adivinar la palabra: " << palabra << endl;
         }
     }
     else{
         s << "No se pudo abrir el reporte" << endl;
     }
     return s.str();
+}
+
+
+string Interfaz::mostrar_bienvenido(){
+    stringstream s;
+    s << "****************************** BIENVENIDO AL JUEGO DEL AHORCADO ********************************" << endl;
+    s << "                              ***********************************" << endl;
+    s << "                              * Por Jose David Flores Rodriguez *" << endl;
+    s << "                              ***********************************" << endl;
+    return s.str();
+    
 }

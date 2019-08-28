@@ -2,8 +2,6 @@
 
 
 Jugadores::Jugadores(int t){  //Recive como parametro el total de personas que jugaran
-    //El metodo es bastante general, si solo se quiere que hayan dos jugadores
-    //Se verificara en la clase juego que el parametro sea el numero dos
     tam = t;
     this->vec = new Persona*[tam]; //Nuevo vector dinamico de jugadores dinamicos
     
@@ -16,7 +14,7 @@ Jugadores::Jugadores(int t){  //Recive como parametro el total de personas que j
 
 Jugadores::~Jugadores(){
     for(int i = 0; i < tam; i++){
-        delete vec[i];
+        delete vec[i]; //Borra los objetos Persona
     }
     delete[] vec; //Borra vector dinamico
     vec = NULL; //Asegurandonos que memoria no esta en uso

@@ -1,6 +1,6 @@
 /* 
- * File:   ContenedorJ.h
- * Author: Aslehy
+ * File:  Jugadores.h
+ * Author: Jose David
  *
  * Created on 19 de agosto de 2019, 09:47 PM
  */
@@ -21,11 +21,11 @@ private:
     
 public:
     Jugadores(int);
-    void agregar(Persona *);
+    void agregar(Persona *); 
     std::string toString()const;
     ~Jugadores();
     int getTam();
-    Persona** get_jugadores() const;
+    Persona** get_jugadores() const; //RETORNA EL VECTOR DINAMICO DE PERSONAS
 
         
     

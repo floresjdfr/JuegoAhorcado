@@ -26,29 +26,3 @@ int Manejador_Archivos::contador_total_palabras(ifstream& diccionario){
 }
 
 
-
-
-
-
-
-/*void Manejador_Archivos::leer_palabras(ifstream& diccionario, Palabras* palabras){
-    string palabra;
-    if(!diccionario.is_open()){
-        cout << "No fue posible abrir el archivo \n";
-    }
-    else{
-        while(getline(diccionario, palabra, ',')){
-            palabras->agregar_palabra(palabra);
-        } 
-    }
-}*/
-
-/*Manejador_Archivos::guarda_juego(ofstream& archivo, Juego* juego){   **Hasta que juego este hecho lo implemento
-    if(!archivo.is_open()){
-        cout << "No fue posible abrir el archivo \n";
-    }
-    else{
-        
-        }
-}*/
-

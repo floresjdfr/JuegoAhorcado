@@ -7,13 +7,7 @@
 
 #include "Juego.h"
 
-/*Juego::Juego() {
-    jugadores = new Jugadores(2);
-    palabra = " ";
-    adivina = " ";
-    adivina_copia = " ";
-    largo_palabra = 0;
-}*/
+
 
 Juego::Juego(int cant, ifstream& diccionario) {
     jugadores = new Jugadores(cant);
@@ -88,16 +82,6 @@ bool Juego::jugar(string input, int posicion_jugador){
     
 }
 
-bool Juego::verifica_palabra(string input){ //Si el jugador toma la desicion de adivinar palabra completa
-   
-    if(Utiles::to_lower(input) == this->get_palabra()){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 bool Juego::ya_gano(){
     if(adivina == palabra)
         return 1;
@@ -143,6 +127,12 @@ string Juego::mostrar_dibujo(int posicion){
     return jugadores->get_jugadores()[posicion]->get_dibujo()->to_string_dibujo();
 }
 
+string Juego::mostrar_dos_dibujos(){
+    stringstream s;
+    s << jugadores->get_jugadores()[0]->get_dibujo()->to_string_dibujo()  << jugadores->get_jugadores()[0]->get_nombre() << endl;
+    s << jugadores->get_jugadores()[1]->get_dibujo()->to_string_dibujo() << endl << jugadores->get_jugadores()[1]->get_nombre() << endl;
+    return s.str();
+}
 string Juego::get_ganador(int posicion){
     return jugadores->get_jugadores()[posicion]->get_nombre();
 }
@@ -168,7 +158,7 @@ bool Juego::salir(){
 void Juego::reporte_ganador(ofstream& records, int posicion){
     //records.open("Records.txt");
     char delim_dato = '\t';
-    char delim_final = '\n';
+    char delim_final = ',';
     if(records.is_open()){
         if(posicion == 0){
             
@@ -186,9 +176,9 @@ void Juego::reporte_ganador(ofstream& records, int posicion){
 }
 
 void Juego::reporte_solo(ofstream& records){
-    //records.open("Records.txt");
+    
     char delim_dato = '\t';
-    char delim_final = '\n';
+    char delim_final = ',';
     if(records.is_open()){
         
         records << this->get_ganador(0) << delim_dato << palabra << delim_final; 
@@ -197,12 +187,12 @@ void Juego::reporte_solo(ofstream& records){
         cout << "Error abriendo archivo rerpotes " << endl;
     }
     
-    //records.close();
+    
 }
 
 void Juego::reporte_no_gane(ofstream& records){
-    char delim_dato = '\t';
-    char delim_final = '\n';
+    const char delim_dato = '\t';
+    const char delim_final = ',';
     if(records.is_open()){
         records <<  jugadores->get_jugadores()[0]->get_nombre() << delim_dato << jugadores->get_jugadores()[1]->get_nombre()<< delim_dato <<  palabra << delim_final;
     }
@@ -212,8 +202,8 @@ void Juego::reporte_no_gane(ofstream& records){
 }
 
 void Juego::reporte_no_gane_solo(ofstream& records){
-    char delim_dato = '\t';
-    char delim_final = '\n';
+    const char delim_dato = '\t';
+    const char delim_final = ',';
     if(records.is_open()){
         records << this->get_ganador(0) << delim_dato << palabra << delim_final;
     }

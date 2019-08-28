@@ -5,6 +5,9 @@
  * Created on August 22, 2019, 1:20 AM
  */
 
+/*CLASE QUE SE ENCARGA DE CREAR EL VECTOR DE PALABRAS Y ALMACENARLAS
+ DEJANDOLAS DISPONIBLES PARA SER USADAS EN EL JUEGO*/
+
 #ifndef PALABRAS_H
 #define	PALABRAS_H
 #include <fstream>
@@ -17,7 +20,6 @@ class Palabras {
 public:
     Palabras(ifstream&);
     ~Palabras();
-    //void agregar_palabra(ifstream&);
     string to_string_palabras() const;
     int get_cantidad() const;
     int get_tamano() const;

@@ -9,7 +9,6 @@
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
-      <itemPath>Menu.h</itemPath>
       <itemPath>Palabras.h</itemPath>
       <itemPath>Persona.h</itemPath>
       <itemPath>Utiles.h</itemPath>
@@ -26,7 +25,6 @@
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
-      <itemPath>Menu.cpp</itemPath>
       <itemPath>Palabras.cpp</itemPath>
       <itemPath>Persona.cpp</itemPath>
       <itemPath>Utiles.cpp</itemPath>
@@ -76,10 +74,6 @@
       <item path="Manejador_Archivos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Menu.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -135,10 +129,6 @@
       <item path="Manejador_Archivos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Menu.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
       </item>
