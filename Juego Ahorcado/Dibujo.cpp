@@ -21,11 +21,6 @@ Dibujo::Dibujo() {
 }
 
 
-
-string Dibujo::get_vector_dibujo() const{ //RETORNA EL VECTOR
-    return vector[6];
-}
-
 string Dibujo::to_string_dibujo() const{ //MUESTRA EL VECTOR DE DIBUJO
     stringstream s;
         for (int i = 0; i < 6; i++){

@@ -15,7 +15,6 @@ using namespace std;
 class Dibujo {
 public:
     Dibujo();
-    string get_vector_dibujo() const; //RETORNA EL VECTOR QUE ES EL DIBUJO DEL AHORCADO
     string to_string_dibujo() const; //MUESTRA EL DIBUJO
     void set_vector(int); //EL PARAMETRO EL UN INTENTO PERDIDO MAS DEL JUGADOR
 private:

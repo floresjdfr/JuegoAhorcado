@@ -70,47 +70,47 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Dibujo.o: Dibujo.cpp 
+${OBJECTDIR}/Dibujo.o: Dibujo.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Dibujo.o Dibujo.cpp
 
-${OBJECTDIR}/Interfaz.o: Interfaz.cpp 
+${OBJECTDIR}/Interfaz.o: Interfaz.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Interfaz.o Interfaz.cpp
 
-${OBJECTDIR}/Juego.o: Juego.cpp 
+${OBJECTDIR}/Juego.o: Juego.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Juego.o Juego.cpp
 
-${OBJECTDIR}/Jugadores.o: Jugadores.cpp 
+${OBJECTDIR}/Jugadores.o: Jugadores.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Jugadores.o Jugadores.cpp
 
-${OBJECTDIR}/Manejador_Archivos.o: Manejador_Archivos.cpp 
+${OBJECTDIR}/Manejador_Archivos.o: Manejador_Archivos.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Manejador_Archivos.o Manejador_Archivos.cpp
 
-${OBJECTDIR}/Palabras.o: Palabras.cpp 
+${OBJECTDIR}/Palabras.o: Palabras.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Palabras.o Palabras.cpp
 
-${OBJECTDIR}/Persona.o: Persona.cpp 
+${OBJECTDIR}/Persona.o: Persona.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Persona.o Persona.cpp
 
-${OBJECTDIR}/Utiles.o: Utiles.cpp 
+${OBJECTDIR}/Utiles.o: Utiles.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Utiles.o Utiles.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
@@ -121,7 +121,6 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego_ahorcado.exe
 
 # Subprojects
 .clean-subprojects:
