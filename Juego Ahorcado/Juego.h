@@ -11,7 +11,7 @@
 #define	JUEGO_H
 
 
-#include "Palabras.h"
+#include "Palabra.h"
 #include "Utiles.h"
 #include "Jugadores.h"
 #include <string>

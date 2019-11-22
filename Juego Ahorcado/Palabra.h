@@ -16,21 +16,17 @@
 
 
 
-class Palabras {
+class Palabra {
 public:
-    Palabras(ifstream&);
-    ~Palabras();
-    string to_string_palabras() const;
-    int get_cantidad() const;
-    int get_tamano() const;
-    string get_palabra(int) const;
-    string* get_vector_palabras() const;
-    void agregar_palabras(string);
+    Palabra(string);
+    Palabra();
+    ~Palabra();
+    void setPalabra(string);
+    string to_string() const;
+    string get_palabra() const;
+    
 private:
-    string *palabras;
-    int cantidad;
-    int tamano;
-
+    string palabra;
 };
 
 #endif	/* PALABRAS_H */

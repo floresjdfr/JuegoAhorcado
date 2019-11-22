@@ -9,7 +9,7 @@
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
-      <itemPath>Palabras.h</itemPath>
+      <itemPath>Palabra.h</itemPath>
       <itemPath>Usuario.h</itemPath>
       <itemPath>Utiles.h</itemPath>
     </logicalFolder>
@@ -25,7 +25,7 @@
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
-      <itemPath>Palabras.cpp</itemPath>
+      <itemPath>Palabra.cpp</itemPath>
       <itemPath>Usuario.cpp</itemPath>
       <itemPath>Utiles.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -75,9 +75,9 @@
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Palabras.h" ex="false" tool="3" flavor2="0">
+      <item path="Palabra.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Usuario.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -130,9 +130,9 @@
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Palabras.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Palabras.h" ex="false" tool="3" flavor2="0">
+      <item path="Palabra.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Usuario.cpp" ex="false" tool="1" flavor2="0">
       </item>
