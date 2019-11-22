@@ -15,24 +15,35 @@
 
 using namespace std;
 
-class Persona {
+class Usuario {
     
 private:
-    string Nombre;
+    string nombre; //nombre de usuario
+    string contrasena; //contrasena de usuario
     int intentos;
     Dibujo* dibujo;
     
 public:
+    Usuario(string, string, int, Dibujo*);
+    Usuario();
+    virtual ~Usuario();
     
-    Persona(string);
-    Persona();
-    virtual ~Persona();
+    //Sets
     void set_nombre(string);
+    void set_nuevo_intento(); //AUMENTA EN UNO EL ATRIBUTO INTENTOS
+    void set_nuevo_intento(int);
+    void setContrasena(string);
+    
+    //Gets
     string get_nombre() const;
     int get_intentos() const;
-    void set_nuevo_intento(); //AUMENTA EN UNO EL ATRIBUTO INTENTOS
-    string toStringPersona() const;
     Dibujo* get_dibujo() const;
+    string getContrasena() const;
+    
+    
+    //Otros
+    string toString() const;
+    
     
     
     

@@ -9,7 +9,7 @@
 #define	JUGADORES_H
 
 
-#include  "Persona.h"
+#include  "Usuario.h"
 
 
 using namespace std;

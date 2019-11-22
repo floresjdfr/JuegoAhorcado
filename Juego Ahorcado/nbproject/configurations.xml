@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -10,7 +10,7 @@
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
       <itemPath>Palabras.h</itemPath>
-      <itemPath>Persona.h</itemPath>
+      <itemPath>Usuario.h</itemPath>
       <itemPath>Utiles.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -26,7 +26,7 @@
       <itemPath>Jugadores.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
       <itemPath>Palabras.cpp</itemPath>
-      <itemPath>Persona.cpp</itemPath>
+      <itemPath>Usuario.cpp</itemPath>
       <itemPath>Utiles.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -79,9 +79,9 @@
       </item>
       <item path="Palabras.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Persona.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Usuario.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Persona.h" ex="false" tool="3" flavor2="0">
+      <item path="Usuario.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Utiles.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -134,9 +134,9 @@
       </item>
       <item path="Palabras.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Persona.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Usuario.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Persona.h" ex="false" tool="3" flavor2="0">
+      <item path="Usuario.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Utiles.cpp" ex="false" tool="1" flavor2="0">
       </item>

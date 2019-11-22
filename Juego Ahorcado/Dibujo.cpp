@@ -33,14 +33,14 @@ void Dibujo::set_vector(int intento){ //EL PARAMETRO ES UN INTENTO PERDIDO MAS D
     if(intento == 1){
             vector[2] = vector[2] + cabeza;
         }
-        if(intento == 2){
-            vector[3] = vector[3] + manos;
-        }
-        if(intento == 3){
-            vector[4] = vector[4] + torzo;
-        }
-        if(intento == 4){
-            vector[5] = vector[5] + pies + "\n         Game Over";
-        }
+    if(intento == 2){
+        vector[3] = vector[3] + manos;
+    }
+    if(intento == 3){
+        vector[4] = vector[4] + torzo;
+    }
+    if(intento == 4){
+        vector[5] = vector[5] + pies + "\n         Game Over";
+    }
 }
 

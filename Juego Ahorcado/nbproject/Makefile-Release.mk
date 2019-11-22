@@ -41,7 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Jugadores.o \
 	${OBJECTDIR}/Manejador_Archivos.o \
 	${OBJECTDIR}/Palabras.o \
-	${OBJECTDIR}/Persona.o \
+	${OBJECTDIR}/Usuario.o \
 	${OBJECTDIR}/Utiles.o \
 	${OBJECTDIR}/main.o
 
@@ -100,10 +100,10 @@ ${OBJECTDIR}/Palabras.o: Palabras.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Palabras.o Palabras.cpp
 
-${OBJECTDIR}/Persona.o: Persona.cpp
+${OBJECTDIR}/Usuario.o: Usuario.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Persona.o Persona.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Usuario.o Usuario.cpp
 
 ${OBJECTDIR}/Utiles.o: Utiles.cpp
 	${MKDIR} -p ${OBJECTDIR}
