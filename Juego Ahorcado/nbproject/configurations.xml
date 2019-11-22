@@ -9,6 +9,7 @@
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
+      <itemPath>Nodo.h</itemPath>
       <itemPath>Palabra.h</itemPath>
       <itemPath>Usuario.h</itemPath>
       <itemPath>Utiles.h</itemPath>
@@ -75,6 +76,8 @@
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Nodo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Palabra.h" ex="false" tool="3" flavor2="0">
@@ -129,6 +132,8 @@
       <item path="Manejador_Archivos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Manejador_Archivos.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Nodo.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Palabra.cpp" ex="false" tool="1" flavor2="0">
       </item>
