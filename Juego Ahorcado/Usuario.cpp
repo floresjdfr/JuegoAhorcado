@@ -56,7 +56,7 @@ string Usuario::getContrasena() const{
 //Otros
 string Usuario::toString()const {
     stringstream r;
-    r<<"Usuario: "<< Nombre <<'\n';
+    r<<"Usuario: "<< nombre <<'\n';
     r << "Intentos fallidos: " << intentos << endl;
     return r.str();
 }
