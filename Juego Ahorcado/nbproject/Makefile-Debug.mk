@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Interfaz.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Jugadores.o \
+	${OBJECTDIR}/Lista.o \
 	${OBJECTDIR}/Manejador_Archivos.o \
 	${OBJECTDIR}/Palabra.o \
 	${OBJECTDIR}/Usuario.o \
@@ -89,6 +90,11 @@ ${OBJECTDIR}/Jugadores.o: Jugadores.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Jugadores.o Jugadores.cpp
+
+${OBJECTDIR}/Lista.o: Lista.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Lista.o Lista.cpp
 
 ${OBJECTDIR}/Manejador_Archivos.o: Manejador_Archivos.cpp
 	${MKDIR} -p ${OBJECTDIR}

@@ -8,6 +8,7 @@
       <itemPath>Interfaz.h</itemPath>
       <itemPath>Juego.h</itemPath>
       <itemPath>Jugadores.h</itemPath>
+      <itemPath>Lista.h</itemPath>
       <itemPath>Manejador_Archivos.h</itemPath>
       <itemPath>Nodo.h</itemPath>
       <itemPath>Palabra.h</itemPath>
@@ -25,6 +26,7 @@
       <itemPath>Interfaz.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Jugadores.cpp</itemPath>
+      <itemPath>Lista.cpp</itemPath>
       <itemPath>Manejador_Archivos.cpp</itemPath>
       <itemPath>Palabra.cpp</itemPath>
       <itemPath>Usuario.cpp</itemPath>
@@ -71,6 +73,10 @@
       <item path="Jugadores.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Jugadores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manejador_Archivos.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -128,6 +134,10 @@
       <item path="Jugadores.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Jugadores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Manejador_Archivos.cpp" ex="false" tool="1" flavor2="0">
       </item>
